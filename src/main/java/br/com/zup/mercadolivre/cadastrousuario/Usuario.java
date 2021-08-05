@@ -27,6 +27,7 @@ public class Usuario {
     @NotNull
     private LocalDateTime instante = LocalDateTime.now();
 
+    @Deprecated
     public Usuario() {
     }
 
