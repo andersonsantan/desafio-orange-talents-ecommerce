@@ -31,10 +31,10 @@ public class ProdutoRestController {
 
     @PostMapping
     @Transactional
-    public Produto criarProduto(@RequestBody @Valid NovoProdutoRequest novoProdutoRequest){
+    public String criarProduto(@RequestBody @Valid NovoProdutoRequest novoProdutoRequest){
         Usuario usuario = usuarioRepositori.findByEmail("anderson@email.com.br").get();
         Produto produto = produtoRepository.save(novoProdutoRequest.toModel(categotiaRepository,usuario));
-        return produto;
+        return produto.toString();
     }
 
 }

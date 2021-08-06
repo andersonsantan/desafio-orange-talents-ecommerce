@@ -3,7 +3,9 @@ package br.com.zup.mercadolivre.produto;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class CaracteristicaProduto {
