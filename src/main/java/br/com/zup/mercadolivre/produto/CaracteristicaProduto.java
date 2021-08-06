@@ -42,18 +42,16 @@ public class CaracteristicaProduto {
         this.produto = produto;
     }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof CaracteristicaProduto)) return false;
         CaracteristicaProduto that = (CaracteristicaProduto) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(nome, that.nome) && Objects.equals(descricao, that.descricao) && Objects.equals(produto, that.produto);
+        return Objects.equals(nome, that.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), nome, descricao, produto);
+        return Objects.hash(nome);
     }
 }

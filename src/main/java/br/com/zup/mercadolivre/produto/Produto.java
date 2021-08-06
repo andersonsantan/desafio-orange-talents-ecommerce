@@ -7,7 +7,9 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -42,6 +44,8 @@ public class Produto {
     @ManyToOne
     private Usuario dono;
 
+    private LocalDateTime instante = LocalDateTime.now();
+
 
     public Produto(String nome, Double valor, Integer quantidade, Set<NovaCaracteristicaRequest> caracteristicaProduto, String descricao, Categoria categoria, Usuario dono) {
         this.nome = nome;
@@ -59,5 +63,16 @@ public class Produto {
         return caracteristicas;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Produto)) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(nome, produto.nome) && Objects.equals(caracteristicaProduto, produto.caracteristicaProduto);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, caracteristicaProduto);
+    }
 }

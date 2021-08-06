@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -29,6 +30,7 @@ public class ProdutoRestController {
     }
 
     @PostMapping
+    @Transactional
     public Produto criarProduto(@RequestBody @Valid NovoProdutoRequest novoProdutoRequest){
         Usuario usuario = usuarioRepositori.findByEmail("anderson@email.com.br").get();
         Produto produto = produtoRepository.save(novoProdutoRequest.toModel(categotiaRepository,usuario));

@@ -2,6 +2,7 @@ package br.com.zup.mercadolivre.produto;
 
 import br.com.zup.mercadolivre.categoria.Categoria;
 import br.com.zup.mercadolivre.categoria.CategotiaRepository;
+import br.com.zup.mercadolivre.config.validacao.annotation.CaracteristicasRepetidas;
 import br.com.zup.mercadolivre.config.validacao.annotation.ExistsId;
 import br.com.zup.mercadolivre.usuario.Usuario;
 import org.hibernate.validator.constraints.Length;
@@ -24,7 +25,8 @@ public class NovoProdutoRequest {
     @PositiveOrZero(message = "A quantidade deve ser maior que zero")
     private Integer quantidade;
 
-    @Size(min = 3, message = "O produto deve possuir ao menos 3 características")
+    @Size(min = 3, message = "O produto deve possuir ao menos 3 características diferentes")
+    //@CaracteristicasRepetidas
     private Set<NovaCaracteristicaRequest> caracteristicas;
 
     @NotBlank(message = "Campo obrigatório")
@@ -49,9 +51,7 @@ public class NovoProdutoRequest {
         this.categoriaId = categoriaId;
     }
 
-    public void setCaracteristicas(Set<NovaCaracteristicaRequest> caracteristicas) {
-        this.caracteristicas = caracteristicas;
-    }
+
 
     public Produto toModel(CategotiaRepository categotiaRepository, Usuario dono){
         Categoria categoria = categotiaRepository.findById(categoriaId).get();
