@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.cadastrousuario;
+package br.com.zup.mercadolivre.usuario;
 
 import br.com.zup.mercadolivre.config.security.Perfil;
 import org.hibernate.validator.constraints.Length;

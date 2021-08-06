@@ -1,7 +1,7 @@
 package br.com.zup.mercadolivre.config.security;
 
-import br.com.zup.mercadolivre.cadastrousuario.Usuario;
-import br.com.zup.mercadolivre.cadastrousuario.UsuarioRepositori;
+import br.com.zup.mercadolivre.usuario.Usuario;
+import br.com.zup.mercadolivre.usuario.UsuarioRepositori;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.cadastrocategoria;
+package br.com.zup.mercadolivre.categoria;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

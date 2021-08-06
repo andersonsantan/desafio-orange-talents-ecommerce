@@ -1,7 +1,7 @@
 package br.com.zup.mercadolivre.config.security;
 
 
-import br.com.zup.mercadolivre.cadastrousuario.Usuario;
+import br.com.zup.mercadolivre.usuario.Usuario;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;

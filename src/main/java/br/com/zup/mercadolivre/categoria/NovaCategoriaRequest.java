@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.cadastrocategoria;
+package br.com.zup.mercadolivre.categoria;
 
 
 import br.com.zup.mercadolivre.config.validacao.annotation.ExistsId;

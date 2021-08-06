@@ -2,7 +2,7 @@ package br.com.zup.mercadolivre.config.security;
 
 
 
-import br.com.zup.mercadolivre.cadastrousuario.UsuarioRepositori;
+import br.com.zup.mercadolivre.usuario.UsuarioRepositori;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

@@ -1,17 +1,12 @@
-package br.com.zup.mercadolivre.cadastrousuario;
+package br.com.zup.mercadolivre.usuario;
 
 import br.com.zup.mercadolivre.config.validacao.annotation.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 
 public class NovoUsuarioRequest {
 

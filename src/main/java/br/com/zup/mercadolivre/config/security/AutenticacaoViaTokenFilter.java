@@ -1,7 +1,7 @@
 package br.com.zup.mercadolivre.config.security;
 
-import br.com.zup.mercadolivre.cadastrousuario.Usuario;
-import br.com.zup.mercadolivre.cadastrousuario.UsuarioRepositori;
+import br.com.zup.mercadolivre.usuario.Usuario;
+import br.com.zup.mercadolivre.usuario.UsuarioRepositori;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -11,7 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Optional;
 
 
 public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {

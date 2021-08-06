@@ -1,4 +1,4 @@
-package br.com.zup.mercadolivre.cadastrocategoria;
+package br.com.zup.mercadolivre.categoria;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
