@@ -3,6 +3,7 @@ package br.com.zup.mercadolivre.produto;
 
 import br.com.zup.mercadolivre.categoria.Categoria;
 import br.com.zup.mercadolivre.usuario.Usuario;
+import com.fasterxml.classmate.Annotations;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Entity
@@ -45,7 +47,12 @@ public class Produto {
     private Usuario dono;
 
     private LocalDateTime instante = LocalDateTime.now();
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.MERGE)
+    private Set<ImagemProduto> imagens = new HashSet<>();
 
+    @Deprecated
+    public Produto() {
+    }
 
     public Produto(String nome, Double valor, Integer quantidade, Set<NovaCaracteristicaRequest> caracteristicaProduto, String descricao, Categoria categoria, Usuario dono) {
         this.nome = nome;
@@ -83,5 +90,14 @@ public class Produto {
                 ", nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 '}';
+    }
+
+    public void associarImagens(Set<String> links) {
+        Set<ImagemProduto> imagens = links.stream().map(link -> new ImagemProduto(this, link)).collect(Collectors.toSet());
+        this.imagens.addAll(imagens);
+    }
+
+    public boolean pertenceAoUsuario(Usuario possivelDone) {
+        return this.dono.equals(possivelDone);
     }
 }
