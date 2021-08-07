@@ -42,7 +42,6 @@ public class ErroValidacaoHeandler {
 
         return buildValidationErrors(fieldErrors, responseList);
     }
-
     private List<ErroFormResponse> buildValidationErrors(List<FieldError> fieldErrors, List<ErroFormResponse> responseList) {
         fieldErrors.forEach(e -> {
             String mensagem = messageSource.getMessage(e, LocaleContextHolder.getLocale());
