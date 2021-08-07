@@ -4,12 +4,10 @@ import br.com.zup.mercadolivre.config.exception.ProdutoNotFoundException;
 import br.com.zup.mercadolivre.produto.Produto;
 import br.com.zup.mercadolivre.produto.ProdutoRepository;
 import br.com.zup.mercadolivre.usuario.Usuario;
-import javassist.NotFoundException;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 

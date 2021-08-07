@@ -34,13 +34,6 @@ public class Opiniao {
     @ManyToOne
     private Produto produto;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Deprecated
     public Opiniao() {
