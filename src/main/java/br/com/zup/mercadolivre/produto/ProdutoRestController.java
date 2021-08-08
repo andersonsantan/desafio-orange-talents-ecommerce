@@ -40,11 +40,12 @@ public class ProdutoRestController {
 
     @PostMapping(value = "/produto/{id}/imagens")
     @Transactional
-    public void adicionarImagens(@PathVariable("id")Long id, @Valid NovasImagensRequest request){
+    public String adicionarImagens(@PathVariable("id")Long id, @Valid NovasImagensRequest request){
         Set<String> links  = uploaderFake.envia(request.getImagens());
         Produto produto = produtoRepository.findById(id).get();
         produto.associarImagens(links);
         produtoRepository.save(produto);
+        return "Imagem armazenada";
     }
 
 }

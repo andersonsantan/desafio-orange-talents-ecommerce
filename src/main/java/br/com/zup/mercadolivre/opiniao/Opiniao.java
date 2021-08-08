@@ -58,4 +58,12 @@ public class Opiniao {
                 "\n produto=" + produto +
                 '}';
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }

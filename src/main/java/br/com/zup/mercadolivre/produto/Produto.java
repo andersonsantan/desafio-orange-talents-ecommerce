@@ -100,4 +100,20 @@ public class Produto {
     public boolean pertenceAoUsuario(Usuario possivelDone) {
         return this.dono.equals(possivelDone);
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
 }
