@@ -5,6 +5,7 @@ import br.com.zup.mercadolivre.categoria.Categoria;
 import br.com.zup.mercadolivre.usuario.Usuario;
 import com.fasterxml.classmate.Annotations;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -115,5 +116,14 @@ public class Produto {
 
     public Double getValor() {
         return valor;
+    }
+
+    public boolean abateEstoque(@Positive int quantidade) {
+        Assert.isTrue(quantidade>0,"A quantidade deve ser maior que zero");
+        if (quantidade <= this.quantidade){
+            this.quantidade -= quantidade;
+            return true;
+        }
+        return false;
     }
 }
