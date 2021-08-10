@@ -1,5 +1,7 @@
 package br.com.zup.mercadolivre.finalizarcompra;
 
+import br.com.zup.mercadolivre.finalizarcompra.fechamentoCompra.GatewayPagamento;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -12,13 +14,13 @@ public class NovaCompraRequest {
     private Long idProduto;
 
     @NotNull
-    private ListaGatewayPagamento gateway;
+    private GatewayPagamento gateway;
 
     @Deprecated
     public NovaCompraRequest() {
     }
 
-    public NovaCompraRequest(int quantidade, Long idProduto, ListaGatewayPagamento gateway) {
+    public NovaCompraRequest(int quantidade, Long idProduto, GatewayPagamento gateway) {
         this.quantidade = quantidade;
         this.idProduto = idProduto;
         this.gateway = gateway;
@@ -32,7 +34,19 @@ public class NovaCompraRequest {
         return idProduto;
     }
 
-    public ListaGatewayPagamento getGateway() {
+    public GatewayPagamento gatewayPagamento() {
         return gateway;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
+    }
+
+    public void setGateway(GatewayPagamento gateway) {
+        this.gateway = gateway;
     }
 }

@@ -118,6 +118,10 @@ public class Produto {
         return valor;
     }
 
+    public Usuario getDono() {
+        return dono;
+    }
+
     public boolean abateEstoque(@Positive int quantidade) {
         Assert.isTrue(quantidade>0,"A quantidade deve ser maior que zero");
         if (quantidade <= this.quantidade){
